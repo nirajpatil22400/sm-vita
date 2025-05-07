@@ -10,8 +10,7 @@ export default function MyCheckbox() {
   return (
     <>
       <label>
-        <input type="checkbox" checked={liked} onChange={handleChange} />I liked
-        this
+        <input type="checkbox" onChange={handleChange} />I liked this
       </label>
       <p>You {liked ? "liked" : "did not like"} this.</p>
     </>
