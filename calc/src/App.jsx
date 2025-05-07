@@ -74,13 +74,17 @@
 
 //multiple checkbox selected
 import React from "react";
+import "./App.css"
 
 const App = () => {
   const [allChecked, setAllChecked] = React.useState([]);
 
   function handleChange(e) {
     if (e.target.checked) {
+                  // copies every element from the current allChecked array.
       setAllChecked([...allChecked, e.target.value]);
+                                    // adds the new checkbox value at the end.
+      //So a new array is created, not mutated.
     } else {
       setAllChecked(allChecked.filter((item) => item !== e.target.value));
     }
