@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 export default function App() {
   return (
     /*
@@ -20,6 +20,7 @@ export default function App() {
 }
 function MyButton() {
   const [count, setCount] = useState(0); // Step 1: Declare state
+  console.log(useState(0));
   function handleClick() {
     setCount(count + 1); // Step 2: Update state when button is clicked
     console.log(
@@ -27,6 +28,7 @@ function MyButton() {
       count
     ); /* console.log(count) will show the previous value because state updates are asynchronous. */
   }
+  console.log(count);
   /*
   useState(0) creates a count state variable with initial value 0.
   setCount is the function used to update count.
@@ -86,4 +88,10 @@ function MyButton() {
 
   return <button onClick={handleClick}>Clicked {count} times</button>;
 } 
+ */
+/*
+const [state, setState] = useState(initialValue);
+state: The current value of the state.
+setState: A function to update that state.
+initialValue: The initial state when the component first renders.
  */
