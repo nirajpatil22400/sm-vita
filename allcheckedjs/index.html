@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all checked</title>
+</head>
+
+<body>
+    <form>
+        <input type="checkbox" name="n1" value="1" onchange="AddList()">
+        <input type="checkbox" name="n2" value="2" onchange="AddList()">
+    </form>
+    <script>
+        let allchecked = [];
+        function AddList() {
+            let setarray = (ac) => {
+                allchecked = ac
+            }
+
+            if (event.target.checked) {
+                setarray([...allchecked, event.target.value]);
+            }
+
+            console.log(allchecked);
+        }
+    </script>
+</body>
+
+</html>
