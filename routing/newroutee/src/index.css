@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+li {
+  display: inline;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
