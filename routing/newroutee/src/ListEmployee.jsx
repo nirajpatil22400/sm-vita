@@ -1,44 +1,58 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./Listemployee.css";
 
-function ListEmployee() {
-  const [employees, setEmployee] = useState([]);
+function Listemployee() {
+  const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-    fetch("https://localhost:7230/api/Employee")
+    fetch("http://localhost:5081/newEmployee")
       .then((res) => res.json())
       .then((result) => {
-        setEmployee(result);
+        setEmployees(result);
       });
   }, []);
 
   return (
-    <div>
-      <h4>
-        <Link to="/create">Create</Link>
-      </h4>
-      <h2>Employees Data...</h2>
-      <table border="1" cellPadding="10" style={{ borderCollapse: "collapse" }}>
+    <div className="employee-container">
+      <div className="header-row">
+        <h2>Employees Data</h2>
+        <Link to="/create" className="create-btn">
+          + Create New
+        </Link>
+      </div>
+
+      <table className="employee-table">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Department</th>
-            <th>Actions</th>
+            <th colSpan="3">Actions</th>
           </tr>
         </thead>
         <tbody>
-          {employees.map((emp) => (
-            <tr key={emp.id}>
-              <td>{emp.id}</td>
-              <td>{emp.name}</td>
-              <td>{emp.email}</td>
-              <td>{emp.department}</td>
+          {employees.map((employee) => (
+            <tr key={employee.id}>
+              <td>{employee.id}</td>
+              <td>{employee.name}</td>
+              <td>{employee.email}</td>
+              <td>{employee.departmentId}</td>
               <td>
-                <Link to={`/emp/${emp.id}`}>Display</Link>
-                <Link to={`/empup/${emp.id}`}>Edit</Link>
-                <Link to={`/empdel/${emp.id}`}>Delete</Link>
+                <Link className="action view" to={`/display/${employee.id}`}>
+                  View
+                </Link>
+              </td>
+              <td>
+                <Link className="action edit" to={`/edit/${employee.id}`}>
+                  Edit
+                </Link>
+              </td>
+              <td>
+                <Link className="action delete" to={`/delete/${employee.id}`}>
+                  Delete
+                </Link>
               </td>
             </tr>
           ))}
@@ -48,4 +62,4 @@ function ListEmployee() {
   );
 }
 
-export default ListEmployee;
+export default Listemployee;

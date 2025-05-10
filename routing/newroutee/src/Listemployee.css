@@ -1,0 +1,67 @@
+.employee-container {
+  padding: 2rem;
+  background-color: #f9fafb;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.create-btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.create-btn:hover {
+  background-color: #1e40af;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.employee-table th,
+.employee-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.employee-table th {
+  background-color: #e5e7eb;
+}
+
+.action {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+}
+
+.action.view {
+  background-color: #7d9ff7;
+}
+
+.action.edit {
+  background-color: #10b981;
+}
+
+.action.delete {
+  background-color: #ef4444;
+}
+
+/* .action:hover {
+  opacity: 0.85;
+} */
