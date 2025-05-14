@@ -1,9 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Listemployee.css";
+import { useNavigate } from "react-router-dom";
 
 function Listemployee() {
   const [employees, setEmployees] = useState([]);
+
+  const navigate = useNavigate();
+
+  // Redirect to home if session key is empty
+  useEffect(() => {
+    const chks = sessionStorage.getItem("key");
+    if (!chks || chks === "" || chks === "null" || chks === "undefined") {
+      navigate("/");
+    }
+  }, [navigate]);
 
   useEffect(() => {
     fetch("http://localhost:5081/newEmployee")

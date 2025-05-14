@@ -1,40 +1,92 @@
-.form-container {
-  width: 350px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+/* Overall form wrapper */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eef2f7; /* Light professional background */
 }
 
+/* Container with form */
+.form-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  background-color: #ffffff; /* Clean white background */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+  font-family: "Roboto", sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-container:hover {
+  transform: scale(1.02); /* Slight scale effect on hover */
+}
+
+/* Title */
+.form-title {
+  text-align: center;
+  color: #2c3e50; /* Deep blue-gray color for title */
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Labels */
 .form-label {
   display: block;
   margin-bottom: 8px;
-  font-weight: bold;
-  color: #333;
+  font-weight: 500;
+  color: #34495e; /* Dark gray for labels */
 }
 
+/* Input fields */
 .form-input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #bdc3c7; /* Light gray border for inputs */
   border-radius: 6px;
   font-size: 14px;
+  background-color: #f8f9fa; /* Very light gray background for inputs */
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
+/* Focus and hover effect for inputs */
+.form-input:focus {
+  border-color: #2980b9; /* Blue border when focused */
+  background-color: #eaf2f8; /* Light blue-gray background when focused */
+  outline: none;
+}
+
+/* Submit Button */
 .form-submit {
   width: 100%;
-  padding: 10px;
-  background-color: #007bff;
+  padding: 14px;
+  background-color: #2980b9; /* Strong blue for the button */
   color: white;
   font-size: 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+/* Button hover effect */
 .form-submit:hover {
-  background-color: #0056b3;
+  background-color: #1f618d; /* Darker blue on hover */
+  transform: translateY(-2px); /* Button lift effect */
+}
+
+/* Button active effect */
+.form-submit:active {
+  transform: translateY(1px); /* Button press effect */
+}
+
+/* Error message on form */
+.form-error {
+  color: #e74c3c; /* Red color for error messages */
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-align: center;
 }

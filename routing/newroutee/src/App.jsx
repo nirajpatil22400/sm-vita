@@ -104,6 +104,8 @@ export default App;
 
 import { useState, useEffect } from "react";
 import { Outlet, Link, useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./nav.css";
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(null);
@@ -127,7 +129,7 @@ function App() {
       sessionStorage.setItem("key", JSON.stringify(data));
       setReadVal("");
       setLoggedIn(true);
-      navigate("/listemployee"); // 👉 Redirect to employee list
+      //   navigate("/listemployee"); // 👉 Redirect to employee list
     } else {
       sessionStorage.removeItem("key");
       setLoggedIn(false);
@@ -165,11 +167,11 @@ function App() {
           placeholder="Enter value"
         />
         {isLoggedIn ? (
-          <button onClick={check} value="LoggedOut">
+          <button className="btn btn-danger" onClick={check} value="LoggedOut">
             Log Out
           </button>
         ) : (
-          <button onClick={check} value="LoggedIn">
+          <button className="btn btn-success" onClick={check} value="LoggedIn">
             Log In
           </button>
         )}
